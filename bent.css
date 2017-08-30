@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-  Bent v0.3
+  Bent v0.4
   Copyright 2017, Eduardo Calvo
   lunaticgeek.com
   Free to use under the MIT license.
@@ -26,7 +26,6 @@ html{
 	font-size: 16px;
 	font-family: sans-serif;
 	line-height: 1.5;
-	-webkit-text-size-adjust: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -95,11 +94,17 @@ blockquote:after {
 }
 
 footer{
-  position:absolute;
   bottom:0;
   width:100%;
   height: 2rem;
   text-align: center;
+  margin-top: auto;
+  flex: 1;
+}
+
+article, aside, footer, header, hgroup, main, /*nav,*/ section {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Grid
@@ -110,120 +115,75 @@ footer{
 }
 
 .row {
-  box-sizing: border-box;
-  display: -webkit-box;
-  -webkit-box-flex: 0;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-flex-flow: row wrap;
   flex-flow: row wrap;
 }
 
-.col-sm,
-[class^='col-sm-'],
-[class^='col-sm-offset-'],
-.row[class*='cols-sm-'] > * {
+.col-sm, [class^='col-sm-'] {
   box-sizing: border-box;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 0 auto;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   padding: 0 0.25rem;
-}
-
-.col-sm,
-.row.cols-sm > * {
-  -webkit-box-flex: 1;
   max-width: 100%;
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-  -webkit-flex-basis: 0;
-  flex-basis: 0;
+  flex-direction: column;
 }
 
-  .col-sm-1, .row.cols-sm-1 > * {flex-basis: 8.33333%;}
-  .col-sm-2, .row.cols-sm-2 > * {flex-basis: 16.66667%;}
-  .col-sm-3, .row.cols-sm-3 > * {flex-basis: 25%;}
-  .col-sm-4, .row.cols-sm-4 > * {flex-basis: 33.33333%;}
-  .col-sm-5, .row.cols-sm-5 > * {flex-basis: 41.66667%;}
-  .col-sm-6, .row.cols-sm-6 > * {flex-basis: 50%;}
-  .col-sm-7, .row.cols-sm-7 > * {flex-basis: 58.33333%;}
-  .col-sm-8, .row.cols-sm-8 > * {flex-basis: 66.66667%;}
-  .col-sm-9, .row.cols-sm-9 > * {flex-basis: 75%;}
-  .col-sm-10, .row.cols-sm-10 > * {flex-basis: 83.33333%;}
-  .col-sm-11, .row.cols-sm-11 > * {flex-basis: 91.66667%;}
-  .col-sm-12, .row.cols-sm-12 > * {flex-basis: 100%;}
+.col-sm-1 {flex-basis: 8.33333%;}
+.col-sm-2 {flex-basis: 16.66667%;}
+.col-sm-3 {flex-basis: 25%;}
+.col-sm-4 {flex-basis: 33.33333%;}
+.col-sm-5 {flex-basis: 41.66667%;}
+.col-sm-6 {flex-basis: 50%;}
+.col-sm-7 {flex-basis: 58.33333%;}
+.col-sm-8 {flex-basis: 66.66667%;}
+.col-sm-9 {flex-basis: 75%;}
+.col-sm-10 {flex-basis: 83.33333%;}
+.col-sm-11 {flex-basis: 91.66667%;}
+.col-sm-12 {flex-basis: 100%;}
 
 @media screen and (min-width: 768px) {
-  .col-md,
-  [class^='col-md-'],
-  [class^='col-md-offset-'], .row[class*='cols-md-'] > * {
+  .col-md, [class^='col-md-'] {
     box-sizing: border-box;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 auto;
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     padding: 0 0.25rem;
-  }
-  .col-md,
-  .row.cols-md > * {
-    -webkit-box-flex: 1;
     max-width: 100%;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 0;
-    flex-basis: 0;
+    flex-direction: column;
   }
 
-  .col-md-1, .row.cols-md-1 > * {flex-basis: 8.33333%;}
-  .col-md-2, .row.cols-md-2 > * {flex-basis: 16.66667%;}
-  .col-md-3, .row.cols-md-3 > * {flex-basis: 25%;}
-  .col-md-4, .row.cols-md-4 > * {flex-basis: 33.33333%;}
-  .col-md-5, .row.cols-md-5 > * {flex-basis: 41.66667%;}
-  .col-md-6, .row.cols-md-6 > * {flex-basis: 50%;}
-  .col-md-7, .row.cols-md-7 > * {flex-basis: 58.33333%;}
-  .col-md-8, .row.cols-md-8 > * {flex-basis: 66.66667%;}
-  .col-md-9, .row.cols-md-9 > * {flex-basis: 75%;}
-  .col-md-10, .row.cols-md-10 > * {flex-basis: 83.33333%;}
-  .col-md-11, .row.cols-md-11 > * {flex-basis: 91.66667%;}
-  .col-md-12, .row.cols-md-12 > * {flex-basis: 100%;}
-
+  .col-md-1 {flex-basis: 8.33333%;}
+  .col-md-2 {flex-basis: 16.66667%;}
+  .col-md-3 {flex-basis: 25%;}
+  .col-md-4 {flex-basis: 33.33333%;}
+  .col-md-5 {flex-basis: 41.66667%;}
+  .col-md-6 {flex-basis: 50%;}
+  .col-md-7 {flex-basis: 58.33333%;}
+  .col-md-8 {flex-basis: 66.66667%;}
+  .col-md-9 {flex-basis: 75%;}
+  .col-md-10 {flex-basis: 83.33333%;}
+  .col-md-11 {flex-basis: 91.66667%;}
+  .col-md-12 {flex-basis: 100%;}
 }
 
 @media screen and (min-width: 1280px) {
-  .col-lg,
-  [class^='col-lg-'],
-  [class^='col-lg-offset-'],
-  .row[class*='cols-lg-'] > * {
+  .col-lg, [class^='col-lg-'] {
     box-sizing: border-box;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 auto;
-    flex: 0 0 auto;
+    flex: 1 0 auto;
     padding: 0 0.25rem;
-  }
-  .col-lg, .row.cols-lg > * {
-    -webkit-box-flex: 1;
     max-width: 100%;
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    -webkit-flex-basis: 0;
-    flex-basis: 0;
+    flex-direction: column;
   }
-  .col-lg-1, .row.cols-lg-1 > * {flex-basis: 8.33333%;}
-  .col-lg-2, .row.cols-lg-2 > * {flex-basis: 16.66667%;}
-  .col-lg-3, .row.cols-lg-3 > * {flex-basis: 25%;}
-  .col-lg-4, .row.cols-lg-4 > * {flex-basis: 33.33333%;}
-  .col-lg-5, .row.cols-lg-5 > * {flex-basis: 41.66667%;}
-  .col-lg-6, .row.cols-lg-6 > * {flex-basis: 50%;}
-  .col-lg-7, .row.cols-lg-7 > * {flex-basis: 58.33333%;}
-  .col-lg-8, .row.cols-lg-8 > * {flex-basis: 66.66667%;}
-  .col-lg-9, .row.cols-lg-9 > * {flex-basis: 75%;}
-  .col-lg-10, .row.cols-lg-10 > * {flex-basis: 83.33333%;}
-  .col-lg-11, .row.cols-lg-11 > * {flex-basis: 91.66667%;}
-  .col-lg-12, .row.cols-lg-12 > * {flex-basis: 100%;}
-  
+
+  .col-lg-1 {flex-basis: 8.33333%;}
+  .col-lg-2 {flex-basis: 16.66667%;}
+  .col-lg-3 {flex-basis: 25%;}
+  .col-lg-4 {flex-basis: 33.33333%;}
+  .col-lg-5 {flex-basis: 41.66667%;}
+  .col-lg-6 {flex-basis: 50%;}
+  .col-lg-7 {flex-basis: 58.33333%;}
+  .col-lg-8 {flex-basis: 66.66667%;}
+  .col-lg-9 {flex-basis: 75%;}
+  .col-lg-10 {flex-basis: 83.33333%;}
+  .col-lg-11 {flex-basis: 91.66667%;}
+  .col-lg-12 {flex-basis: 100%;}  
 }
 
 /* Navbar
@@ -260,7 +220,7 @@ nav:hover a, nav:hover a:visited, nav:hover a:hover, nav:hover a:focus {
   width:100%;
   
 }
-nav{background: black;!important} 
+nav{background: black;} 
   nav{width:100%;}
 
 @media screen and (min-width: 768px) {
@@ -295,7 +255,7 @@ nav{background: black;!important}
     width:100%;
     
   }
-  nav{background: black;!important} 
+  nav{background: black;} 
     nav{width:100%;}
 }
 
@@ -330,7 +290,6 @@ button {
 }
 /* Forms
 ------------------------------------------------------------------------------*/
-
 
 
 
