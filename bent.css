@@ -26,22 +26,29 @@ html{
 	font-size: 16px;
 	font-family: sans-serif;
 	line-height: 1.5;
+  /*color: #003;*/
+  background: #FFE;
+}  
+
+body, *{  color: #red;
 }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2em;
-  margin: 0.75rem 0.5rem;
-  font-weight: 300; 
+  margin: 1rem 0 0 0;
+  font-weight: bold; 
 }
-h1 {font-size: 4.0rem}
-h2 {font-size: 3.6rem}
-h3 {font-size: 3.0rem}
-h4 {font-size: 2.4rem}
-h5 {font-size: 1.8rem}
-h6 {font-size: 1.5rem}
+
+h1 {font-size: 2.5rem}
+h2 {font-size: 2rem}
+h3 {font-size: 1.75rem}
+h4 {font-size: 1.5rem}
+h5 {font-size: 1.25rem}
+h6 {font-size: 1rem}
 
 p {margin-top: 0}
 
+a, a:visited, a:hover, a:focus {cursor: pointer;}
 a {color: #1EAEDB}
 a:visited {color: #01579b}
 a:hover, a:focus {color: #0FA0CE}
@@ -197,31 +204,34 @@ nav a, nav a:visited, nav a:hover, nav a:focus {
 nav, nav:hover a, nav:hover a:visited, nav:hover a:hover, nav:hover a:focus {
   width: 100%;
   display: block;
-  background: black;
+  background: #003;
+  color:#FFE;
 }
 
 .drop {
   position: relative;
   display: inline-block;
-  background: black;
+  background: #003;
   max-width: 100%;
 }
 
 .drop div {
   display: none;
   margin-left: 1rem;
-  background: black;
+  background: #003;
 }
 
 .drop:hover div {
   display: block;
-  background: black;
+  background: #003;
   width:100%;
 }
 
 @media screen and (min-width: 768px) {
+  nav a, nav a:visited, nav a:hover, nav a:focus,
   nav:hover a, nav:hover a:visited, nav:hover a:hover, nav:hover a:focus {
     display: inline;
+    color: #FFE;
   }
 
   .drop div {
@@ -232,37 +242,59 @@ nav, nav:hover a, nav:hover a:visited, nav:hover a:hover, nav:hover a:focus {
 
 /* Lists
 ------------------------------------------------------------------------------*/
-ul {list-style: circle inside}
-ol {list-style: decimal inside}
-ol, ul {
-  padding-left: 0;
-  margin-top: 0; }
-ul ul,
-ul ol,
-ol ol,
-ol ul {margin: 1.5rem 0 1.5rem 3rem}
-li {margin-bottom: 1rem;}
+ol, ul, ul ul, ul ol, ol ol, ol ul {padding-left: 1rem;}
 
 /* Tables
 ------------------------------------------------------------------------------*/
-table>:nth-child(2n-1){background:#ddd;}
+tbody > :nth-child(2n-1){background:#ddd;}
 
 /* Buttons
 ------------------------------------------------------------------------------*/
-button {
-  background:#999;
-  border-radius:4px;
-  border:0;
-  color:#fff;
-  cursor:pointer;
-  display:inline-block;
-  margin:2px 0;
-  padding:12px 30px 14px
+button, input, select {
+  width: 100%;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  margin: .5rem auto;
+  padding: .75rem 1.5rem; /*maybe .5 1.5*/
 }
+button {
+  color: #FFE;
+  background: #003;
+}
+/*button:hover{
+  background: #555;
+}
+*/
+button a, button a:visited /*, button a:hover, button a:focus */{
+  text-decoration: none;
+  color: #FFE;
+}
+
 /* Forms
 ------------------------------------------------------------------------------*/
-
-
+input[type=submit] {
+  color:#FFE;
+  background: #4169E1;
+}
+input[type=text] {
+  color:;
+  background: ;
+  border: 1px grey;
+}
+select {
+  color: ;
+  background: grey;
+}
+/* Colours
+------------------------------------------------------------------------------*/
+/* 
+  royalblue: #4169E1    #919191
+  darkslateblue: #483D8B    #646464
+  base: #1B3B66   #404040
+  text: #000033
+*/
 
 
 
