@@ -1,0 +1,7 @@
+language: bash
+
+script: |
+    status=$(curl -s "https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frawgit.com%2Fedkalrio%2Fbent%2Fmaster%2Fbent.css&profile=css3&usermedium=all&warning=no&vextwarning=&lang=es&output=json" | jq '.cssvalidation.validity')
+    if ! $status; then
+        exit 1 
+    fi
