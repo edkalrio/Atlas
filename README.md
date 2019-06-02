@@ -7,4 +7,4 @@ Atlas is a mobile first, lightweight, full-flexbox, JS-free, style-agnostic CSS 
 ### Usage
 Just add this link to the header:
 
-	<link rel="stylesheet" type="text/css" href="https://rawgit.com/edkalrio/Atlas/master/Atlas.css">
+	<link rel="stylesheet" type="text/css" href="https://raw.githack.com/edkalrio/Atlas/master/Atlas.css">
