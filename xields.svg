@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:lang="en" xmlns:xlink="http://www.w3.org/1999/xlink"  width="84" height="20">
+	<title>My Standalone D3 Data Visualization</title>
+	<g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
+		<text id="text_build" x="175" y="150" fill="#000" transform="scale(.1)" textLength="230" />
+		<text id="text_result" x="575" y="150" fill="#000" transform="scale(.1)" textLength="410" />		
+	</g>
+	<script><![CDATA[
+		(function(){
+			const aw = async () => {
+				var locus = new URL(location.href)
+				console.log(locus.pathname)
+				const url = "https://api.travis-ci.org/repos" + locus.pathname
+				const response = await fetch(url);
+				const response_text = await response.text();
+				if (response_text.includes("Success")) {
+					console.log(response_text);
+					var text_build = document.getElementById("text_build");
+					var text_result = document.getElementById("text_result");
+					text_build.textContent = ("biuld");
+					text_result.textContent = ("cool");
+				}	
+			}
+			aw();
+		})(); 
+		console.log("Uh oh, math is broken. But my XML markup isn't.");
+		
+	]]></script>
+</svg>
