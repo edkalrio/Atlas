@@ -1,5 +1,6 @@
 # Atlas
 
+[![Actions Status](https://github.com/edkalrio/Atlas/workflows/CSS%20Validation/badge.svg)](https://github.com/edkalrio/Atlas/actions)
 [![Travis](https://img.shields.io/travis/edkalrio/Atlas.svg?label=CSS)](https://travis-ci.org/edkalrio/Atlas)
 
 <object data="xields.svg"
@@ -11,4 +12,4 @@ Atlas is a mobile first, lightweight, full-flexbox, JS-free, style-agnostic CSS 
 ### Usage
 Just add this link to the header:
 
-	<link rel="stylesheet" type="text/css" href="https://raw.githack.com/edkalrio/Atlas/master/Atlas.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/edkalrio/Atlas/Atlas.css">
