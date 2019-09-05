@@ -1,0 +1,18 @@
+name: CSS Validation
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: CSS Validation
+      run: |
+        url="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fraw.githack.com%2Fedkalrio%2FAtlas%2Fmaster%2FAtlas.css&profile=css3&usermedium=all&warning=no&vextwarning=&lang=es&output=json"
+        status=$(curl -s $url | jq '.cssvalidation.validity')
+        if (( $status != "true")); then
+          exit 1 
+        fi
+      shell: bash
