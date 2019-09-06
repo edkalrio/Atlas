@@ -14,6 +14,6 @@ jobs:
         url="https://jigsaw.w3.org/css-validator/validator?uri=${cdn}&profile=css3&usermedium=all&warning=no&vextwarning=&lang=es&output=json"
         status=$(curl -s ${url} | jq '.cssvalidation.validity')
         if [[ $status != true ]]; then
-		exit 1 
+          exit 1 
         fi   
       shell: bash
